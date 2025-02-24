@@ -8,7 +8,7 @@ fi
 
 # Zsh installieren
 echo "Installiere Zsh..."
-zypper install -n zsh
+zypper -n install zsh
 
 # Zsh als Standard-Shell für alle Benutzer festlegen
 echo "Setze Zsh als Standard-Shell für alle Benutzer..."
