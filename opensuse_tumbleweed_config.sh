@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Last edit: 23.02.2025
+# Last edit: 24.02.2025
 
 echo ""
 echo "----------------------------------------------"
@@ -40,8 +40,9 @@ sudo zypper -n install gnome-disk-utility mtools xfsdump jfsutils f2fs-tools lib
 sudo zypper -n install ntfs-3g libfsntfs1 libluksde1 libftxf1
 
 sudo zypper -n install xdg-utils xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs
-sudo zypper -n install fastfetch fastfetch-fish-completion fastfetch-bash-completion
-sudo zypper install -t pattern devel_basis
+sudo zypper -n install fastfetch fastfetch-bash-completion
+sudo zypper -n install -t pattern devel_basis
+sudo zypper -n install fetchmsttfonts
 
 # Set fastfetch to start with the terminal
 echo "fastfetch" | tee -a ~/.bashrc
@@ -100,7 +101,7 @@ sudo zypper -n install celluloid strawberry soundconverter yt-dlp pavucontrol
 
 
 # Install wine
-sudo zypper install wine wine-mono winetricks protontricks wine-binfmt libgdiplus0 fetchmsttfonts
+sudo zypper install wine wine-mono winetricks protontricks wine-binfmt libgdiplus0 
 
 # Install steam
 sudo zypper install steam steam-devices ProtonPlus libFAudio0 gamemode libgamemode0 libgstvulkan-1_0-0-32bit
@@ -128,7 +129,7 @@ tmpfs /dev/shm tmpfs nodiratime,nodev,nosuid,mode=1777 0 0
 " | sudo tee -a /etc/fstab
 clear
 
-clear
+echo ""
 echo "Postconfig is complete. Press any key to reboot."
 sudo reboot
 
