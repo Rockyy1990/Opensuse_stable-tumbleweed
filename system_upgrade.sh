@@ -7,8 +7,7 @@ echo "  tumbleweed    "
 echo "----------------"
 sleep 2
 sudo zypper refresh
-sudo zypper dup -n
-sudo zypper rm --clean-deps
+sudo zypper -n dup
 sudo zypper clean
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 sleep 2
