@@ -14,9 +14,9 @@ PACKAGE_LIST = "pattern:base, pattern:desktop, pattern:openSUSE-Desktop, vim, ge
 def install_packages():
     print("Installiere benötigte Pakete...")
     try:
-        subprocess.run(["zypper","-n", "install", "kiwi-tools"], check=True)
+        subprocess.run(["sudo","zypper","-n", "install", "python3-kiwi"], check=True)
     except subprocess.CalledProcessError:
-        print("Fehler beim Installieren von kiwi-tools.")
+        print("Fehler beim Installieren von kiwi.")
         exit(1)
 
 # Funktion zum Hinzufügen der Repositories
