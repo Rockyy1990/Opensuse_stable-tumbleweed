@@ -14,7 +14,7 @@ PACKAGE_LIST = "pattern:base, pattern:desktop, pattern:openSUSE-Desktop, vim, ge
 def install_packages():
     print("Installiere benötigte Pakete...")
     try:
-        subprocess.run(["sudo","zypper","-n", "install", "python3-kiwi"], check=True)
+        subprocess.run(["sudo", "zypper","-n", "install", "python3-kiwi"], check=True)
     except subprocess.CalledProcessError:
         print("Fehler beim Installieren von kiwi.")
         exit(1)
@@ -22,9 +22,9 @@ def install_packages():
 # Funktion zum Hinzufügen der Repositories
 def add_repositories():
     print("Füge Repositories hinzu...")
-    subprocess.run(["zypper", "ar", "-f", OSS_REPO_URL, "openSUSE-Tumbleweed-OSS"], check=True)
-    subprocess.run(["zypper", "ar", "-f", NON_OSS_REPO_URL, "openSUSE-Tumbleweed-NON-OSS"], check=True)
-    subprocess.run(["zypper", "refresh"], check=True)
+    subprocess.run(["sudo", "zypper", "ar", "-f", OSS_REPO_URL, "openSUSE-Tumbleweed-OSS"], check=True)
+    subprocess.run(["sudo", "zypper", "ar", "-f", NON_OSS_REPO_URL, "openSUSE-Tumbleweed-NON-OSS"], check=True)
+    subprocess.run(["sudo", "zypper", "refresh"], check=True)
 
 # Funktion zum Erstellen der Live-ISO
 def create_live_iso():
